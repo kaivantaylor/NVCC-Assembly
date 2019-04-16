@@ -1,0 +1,18 @@
+	ORG	100
+If,	Load	A
+	Subt	ONE
+	Skipcond 800
+	Jump	Endif
+Then,	Load	A
+	Add	A
+	Store	B
+	Clear
+	Store	A
+Endif,	Load	B
+	Add	ONE
+	Store	B
+	Output
+	Halt
+A,	Dec	2	/Decimal X-value
+B,	Dec 	3	/Decimal Constant used for B
+ONE,	Dec	1	/Decimal 1

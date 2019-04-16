@@ -1,0 +1,37 @@
+     Assembly listing for: KTaylor_Pg293_29.mas
+                Assembled: Tue Apr 09 13:19:03 EDT 2019
+
+         |         ORG 100           
+100 110E |  If     LOAD A            
+101 4110 |         SUBT ONE          
+102 8800 |         SKIPCOND 800      
+103 9109 |         JUMP Endif        
+104 110E |  Then   LOAD A            
+105 310E |         ADD A             
+106 210F |         STORE B           
+107 A000 |         CLEAR             
+108 210E |         STORE A           
+109 110F |  Endif  LOAD B            
+10A 3110 |         ADD ONE           
+10B 210F |         STORE B           
+10C 6000 |         OUTPUT            
+10D 7000 |         HALT              
+10E 0002 |  A      DEC 2            /Decimal X-value
+10F 0003 |  B      DEC 3            /Decimal Constant used for B
+110 0001 |  ONE    DEC 1            /Decimal 1
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          A      |   10E   | 100, 104, 105, 108
+          B      |   10F   | 106, 109, 10B
+          Endif  |   109   | 103
+          If     |   100   | 
+          ONE    |   110   | 101, 10A
+          Then   |   104   | 
+         --------------------------------------------------
+
+

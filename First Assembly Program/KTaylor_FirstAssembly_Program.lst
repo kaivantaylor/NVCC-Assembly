@@ -1,0 +1,28 @@
+     Assembly listing for: KTaylor_FirstAssembly_Program.mas
+                Assembled: Tue Apr 16 17:11:24 EDT 2019
+
+         |                          / Example and demo program
+         |                          / This is a comment line
+         |                          / Use Tab key to align op codes
+         |                          	
+         |         ORG 100           
+100 1104 |         LOAD a            
+101 3105 |         ADD b             
+102 2106 |         STORE c           
+103 7000 |         HALT              
+104 0019 |  a      DEC 25            
+105 000F |  b      DEC 15            
+106 0000 |  c      HEX 0             
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          a      |   104   | 100
+          b      |   105   | 101
+          c      |   106   | 102
+         --------------------------------------------------
+
+
