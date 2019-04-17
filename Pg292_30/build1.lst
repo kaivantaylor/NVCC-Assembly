@@ -1,5 +1,5 @@
      Assembly listing for: build1.mas
-                Assembled: Tue Apr 16 23:58:44 EDT 2019
+                Assembled: Wed Apr 17 00:43:13 EDT 2019
 
          |                          / START AT ADDRESS 100
          |         ORG 100           
@@ -57,7 +57,7 @@
          |                          
 121 0003 |  X      DEC 3             
 122 0002 |  Y      DEC 2             
-123 0004 |  Z      DEC 4             
+123 0003 |  Z      DEC 3             
 124 0001 |  ONE    DEC 1             
 
 Assembly successful.
