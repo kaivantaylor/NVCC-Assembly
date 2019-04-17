@@ -1,0 +1,16 @@
+ -----------------
+ Symbol | Location
+ -------+---------
+ CASE1  |   111
+ CASE2  |   116
+ CASE3  |   11B
+ END    |   120
+ IF     |   106
+ ONE    |   124
+ THEN1  |   10B
+ THEN2  |   10C
+ VAR    |   100
+ X      |   121
+ Y      |   122
+ Z      |   123
+

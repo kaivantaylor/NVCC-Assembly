@@ -1,0 +1,83 @@
+     Assembly listing for: build1.mas
+                Assembled: Tue Apr 16 23:58:44 EDT 2019
+
+         |                          / START AT ADDRESS 100
+         |         ORG 100           
+         |                          
+         |                          / VARIABLE CHECK
+         |                          
+100 1121 |  VAR    LOAD X            
+101 6000 |         OUTPUT            
+102 1122 |         LOAD Y            
+103 6000 |         OUTPUT            
+104 1123 |         LOAD Z            
+105 6000 |         OUTPUT            
+         |                          
+         |                          / CHECK IF X => Y (CASE1) OR X != Z (CASE2) OR ELSE (CASE3)
+         |                          
+106 1121 |  IF     LOAD X           / Test for X<Y
+107 4122 |         SUBT Y           / X-Y
+108 8800 |         SKIPCOND 800     / IF AC > 0, TRY THEN2 
+109 910B |         JUMP THEN1        
+10A 910C |         JUMP THEN2        
+         |                          
+10B 9111 |  THEN1  JUMP CASE1        
+         |                          
+10C 1121 |  THEN2  LOAD X            
+10D 4123 |         SUBT Z            
+10E 8400 |         SKIPCOND 400     / IF AC = 0, CASE 3
+10F 9116 |         JUMP CASE2        
+110 911B |         JUMP CASE3        
+         |                          
+         |                          / CASES FOR IF, ELIF, ELSE
+         |                          
+111 1122 |  CASE1  LOAD Y           / IF X => Y
+112 3124 |         ADD ONE           
+113 2122 |         STORE Y           
+114 6000 |         OUTPUT            
+115 9120 |         JUMP END          
+         |                          
+116 1122 |  CASE2  LOAD Y           / ELLIF X != Z
+117 4124 |         SUBT ONE          
+118 2122 |         STORE Y           
+119 6000 |         OUTPUT            
+11A 9120 |         JUMP END          
+         |                          
+11B 1123 |  CASE3  LOAD Z           / ELSE
+11C 3124 |         ADD ONE           
+11D 2123 |         STORE Z           
+11E 6000 |         OUTPUT            
+11F 9120 |         JUMP END          
+         |                          
+         |                          / JUMPABLE END (HALT)
+         |                          
+120 7000 |  END    HALT              
+         |                          
+         |                          / DECLARED VARIABLES
+         |                          
+121 0003 |  X      DEC 3             
+122 0002 |  Y      DEC 2             
+123 0004 |  Z      DEC 4             
+124 0001 |  ONE    DEC 1             
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          CASE1  |   111   | 10B
+          CASE2  |   116   | 10F
+          CASE3  |   11B   | 110
+          END    |   120   | 115, 11A, 11F
+          IF     |   106   | 
+          ONE    |   124   | 112, 117, 11C
+          THEN1  |   10B   | 109
+          THEN2  |   10C   | 10A
+          VAR    |   100   | 
+          X      |   121   | 100, 106, 10C
+          Y      |   122   | 102, 107, 111, 113, 116, 118
+          Z      |   123   | 104, 10D, 11B, 11D
+         --------------------------------------------------
+
+
